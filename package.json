@@ -20,7 +20,7 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "anchor-link-gk": "^3.5.13",
+    "anchor-link-gk": "^1.0.0",
     "@babel/core": "^7.12.9",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.7",

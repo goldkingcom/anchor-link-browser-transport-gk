@@ -7,6 +7,7 @@ import typescript from '@rollup/plugin-typescript'
 import replace from '@rollup/plugin-replace'
 import {terser} from 'rollup-plugin-terser'
 
+import json from '@rollup/plugin-json';
 import pkg from './package.json'
 
 const license = fs.readFileSync('LICENSE').toString('utf-8').trim()
@@ -37,7 +38,7 @@ export default [
             sourcemap: true,
             exports: 'default',
         },
-        plugins: [replaceVersion, typescript({target: 'es6'})],
+        plugins: [replaceVersion, typescript({target: 'es6'}),json()],
         external: Object.keys({...pkg.dependencies, ...pkg.peerDependencies}),
         onwarn,
     },
@@ -49,7 +50,7 @@ export default [
             format: 'esm',
             sourcemap: true,
         },
-        plugins: [replaceVersion, typescript({target: 'es2020'})],
+        plugins: [replaceVersion, typescript({target: 'es2020'}),json()],
         external: Object.keys({...pkg.dependencies, ...pkg.peerDependencies}),
         onwarn,
     },
@@ -98,6 +99,7 @@ export default [
                     max_line_len: 500,
                 },
             }),
+            json()
         ],
         external: Object.keys({...pkg.peerDependencies}),
         onwarn,
