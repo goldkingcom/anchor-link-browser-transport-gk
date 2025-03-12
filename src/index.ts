@@ -330,7 +330,7 @@ export default class BrowserTransport implements LinkTransport {
         const footnoteLink = this.createEl({
             tag: 'a',
             target: '_blank',
-            href: 'http://www.aplink.app/home',
+            href: 'https://flonscan.fufi.me/',
             text: this.intl.get('downloadNow'), // 'Download now',
         })
         linkEl.appendChild(footnoteLink)
